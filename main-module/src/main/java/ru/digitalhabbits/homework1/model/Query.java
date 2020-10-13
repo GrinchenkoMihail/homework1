@@ -1,4 +1,4 @@
-package ru.digitalhabbits.homework1.wikiJsonFormat;
+package ru.digitalhabbits.homework1.model;
 
 import java.util.Map;
 

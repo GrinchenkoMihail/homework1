@@ -8,9 +8,9 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import ru.digitalhabbits.homework1.wikiJsonFormat.Page;
-import ru.digitalhabbits.homework1.wikiJsonFormat.Query;
-import ru.digitalhabbits.homework1.wikiJsonFormat.jsonStructure;
+import ru.digitalhabbits.homework1.model.Page;
+import ru.digitalhabbits.homework1.model.Query;
+import ru.digitalhabbits.homework1.model.JsonStructure;
 
 import javax.annotation.Nonnull;
 import java.net.URI;
@@ -56,7 +56,7 @@ public class WikipediaClient {
     }
     private String parseFromJsonToString(String jsonString) {
         Gson gson = new Gson();
-        final jsonStructure root = gson.fromJson(jsonString, jsonStructure.class);
+        final JsonStructure root = gson.fromJson(jsonString, JsonStructure.class);
         final Query query = root.getQuery();
         final Map<String, Page> pages = query.getPages();
         String result = "";
